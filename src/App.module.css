@@ -14,12 +14,12 @@
 }
 .headerContainer h1 {
     font-size: 30px;
-    background-color: blue;
+    background-color: #227c9d;
     padding: 5px;
     border-radius: 5px;
 }
 .headerContainer h3 {
-    background-color: blue;
+    background-color: #227c9d;
     padding: 3px;
     border-radius: 0 5px 5px 0;
 }
@@ -74,4 +74,11 @@
 
 .container .rightSide {
     flex: 1;
+    display: flex;
+}
+.container .rightSide .grid{
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }

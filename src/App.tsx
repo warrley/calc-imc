@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import s from './App.module.css'
+import { calculateImc, Level, levels } from './helpers/imc';
+import { GridItem } from './components/GridItem/grid-item'
 
 const App = () => {
   const [height, setHeigth] = useState<number>(0);
   const [weight, setWeight] = useState<number>(0);
+  const [showItem, setShowItem] = useState<Level | null>()
 
   const handleCalc = () => {
     if (height > 0 && weight > 0) {
-      var res = weight / (height * height);
-      alert(res.toFixed(2));
+
     } else {
       alert("Fill all fields");
     }
@@ -19,15 +21,15 @@ const App = () => {
       <header>
         <div className={s.headerContainer}>
           <h1>W</h1>
-          <h3>imc</h3>
+          <h3>bmi</h3>
           <span>powered by warley</span>
         </div>
       </header>
 
       <div className={s.container}>
         <div className={s.leftSide}>
-          <h1>Calc your IMC</h1>
-          <p>IMC is an abbreviation for "integrated marketing communications". It's a marketing strategy that involves coordinating a company's communication efforts to create a consistent brand message across all media. </p>
+          <h1>Calc your BMI</h1>
+          <p>Body mass index (BMI) is a calculation that compares a person's weight to their height. It's used to estimate a person's body size and weight category</p>
 
           <input
             type='number'
@@ -47,7 +49,11 @@ const App = () => {
         </div>
 
         <div className={s.rightSide}>
-          
+          <div className={s.grid}>
+            {levels.map((item, key) => (
+              <GridItem key={key} data={item} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
