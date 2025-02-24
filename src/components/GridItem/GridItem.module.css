@@ -26,3 +26,13 @@
     font-size: 12px;
     margin-top: 14px;
 }
+.yourImc {
+    font-size: 17px;
+    margin: 10px 0 10px 0;
+}
+.mainInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
