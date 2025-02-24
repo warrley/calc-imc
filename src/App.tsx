@@ -47,7 +47,7 @@ const App = () => {
         </div>
 
         <div className={s.rightSide}>
-          ...
+          
         </div>
       </div>
     </div>
